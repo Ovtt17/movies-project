@@ -1,13 +1,15 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-
+import LiveTvIcon from '@mui/icons-material/LiveTv';
 function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <nav className="bg-[#131925] p-4">
       <div className="flex items-center justify-between">
-        <a className="text-white text-xl font-bold" href="#">Movie App</a>
+        <Link to='/' className="pl-4 text-white text-xl font-bold">
+          <LiveTvIcon />
+        </Link>
         <button
           className="text-white md:hidden"
           onClick={() => setIsOpen(!isOpen)}
