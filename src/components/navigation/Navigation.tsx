@@ -4,7 +4,7 @@ function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="bg-gray-800 p-4">
+    <nav className="bg-[#1e1e1e] p-4">
       <div className="flex items-center justify-between">
         <a className="text-white text-xl font-bold" href="#">Movie App</a>
         <button
