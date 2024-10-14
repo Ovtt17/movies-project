@@ -18,7 +18,7 @@ const MovieCard: FC<MovieCardProps> = ({
   onViewMore,
 }) => {
   return (
-    <div className='cursor-pointer bg-[#252525] rounded-lg shadow-md overflow-hidden transform transition-transform hover:scale-105 duration-200'>
+    <div className='cursor-pointer bg-[#131925] rounded-lg shadow-md overflow-hidden transform transition-transform hover:scale-105 duration-200'>
       <div className='relative'>
         <img
           src={poster}
