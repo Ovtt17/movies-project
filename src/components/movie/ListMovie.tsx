@@ -75,7 +75,7 @@ const ListMovie = () => {
           id='sortType'
           value={sortType}
           onChange={(e) => handleSortChange(e.target.value as 'normal' | 'favorites')}
-          className='p-2 border rounded'
+          className='cursor-pointer p-2 border rounded'
         >
           <option value='normal'>Normal</option>
           <option value='favorites'>Favoritos</option>
