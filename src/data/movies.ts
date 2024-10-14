@@ -5,7 +5,7 @@ const movies: Movie[] = [
   {
     id: 1,
     title: "Avatar",
-    year: "2009",
+    year: 2009,
     rating: {
       rated: "PG-13",
       metascore: "83",
@@ -45,7 +45,7 @@ const movies: Movie[] = [
   {
     id: 2,
     title: "I Am Legend",
-    year: "2007",
+    year: 2007,
     rating: {
       rated: "PG-13",
       metascore: "65",
@@ -84,7 +84,7 @@ const movies: Movie[] = [
   {
     id: 3,
     title: "300",
-    year: "2006",
+    year: 2006,
     rating: {
       rated: "R",
       metascore: "52",
@@ -122,7 +122,7 @@ const movies: Movie[] = [
   {
     id: 4,
     title: "The Avengers",
-    year: "2012",
+    year: 2012,
     rating: {
       rated: "PG-13",
       metascore: "69",
@@ -162,7 +162,7 @@ const movies: Movie[] = [
   {
     id: 5,
     title: "The Wolf of Wall Street",
-    year: "2013",
+    year: 2013,
     rating: {
       rated: "R",
       metascore: "75",
@@ -202,7 +202,7 @@ const movies: Movie[] = [
   {
     id: 6,
     title: "Interstellar",
-    year: "2014",
+    year: 2014,
     rating: {
       rated: "PG-13",
       metascore: "74",
@@ -242,7 +242,7 @@ const movies: Movie[] = [
   {
     id: 7,
     title: "Game of Thrones",
-    year: "2011–",
+    year: 2011,
     rating: {
       rated: "TV-MA",
       metascore: "N/A",
@@ -282,7 +282,7 @@ const movies: Movie[] = [
   {
     id: 8,
     title: "Vikings",
-    year: "2013–",
+    year: 2013,
     rating: {
       rated: "TV-14",
       metascore: "N/A",
@@ -322,7 +322,7 @@ const movies: Movie[] = [
   {
     id: 9,
     title: "Gotham",
-    year: "2014–",
+    year: 2014,
     rating: {
       rated: "TV-14",
       metascore: "N/A",
@@ -362,7 +362,7 @@ const movies: Movie[] = [
   {
     id: 10,
     title: "Power",
-    year: "2014–",
+    year: 2014,
     rating: {
       rated: "TV-MA",
       metascore: "N/A",
@@ -402,7 +402,7 @@ const movies: Movie[] = [
   {
     id: 11,
     title: "Narcos",
-    year: "2015–",
+    year: 2015,
     rating: {
       rated: "TV-MA",
       metascore: "N/A",
@@ -442,7 +442,7 @@ const movies: Movie[] = [
   {
     id: 12,
     title: "Breaking Bad",
-    year: "2008–2013",
+    year: 2008,
     rating: {
       rated: "TV-14",
       metascore: "N/A",
@@ -483,7 +483,7 @@ const movies: Movie[] = [
     id: 13,
     comingSoon: true,
     title: "Doctor Strange",
-    year: "2016",
+    year: 2016,
     rating: {
       rated: "N/A",
       metascore: "N/A",
@@ -522,7 +522,7 @@ const movies: Movie[] = [
     id: 14,
     comingSoon: true,
     title: "Rogue One: A Star Wars Story",
-    year: "2016",
+    year: 2016,
     rating: {
       rated: "N/A",
       metascore: "N/A",
@@ -563,7 +563,7 @@ const movies: Movie[] = [
     id: 15,
     comingSoon: true,
     title: "Assassin's Creed",
-    year: "2016",
+    year: 2016,
     rating: {
       rated: "N/A",
       metascore: "N/A",
@@ -603,7 +603,7 @@ const movies: Movie[] = [
     id: 16,
     comingSoon: true,
     title: "Luke Cage",
-    year: "2016–",
+    year: 2016,
     rating: {
       rated: "TV-MA",
       metascore: "N/A",

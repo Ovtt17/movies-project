@@ -2,7 +2,7 @@ export interface Movie {
   id: number;
   comingSoon?: boolean;
   title: string;
-  year: string;
+  year: number;
   rating: Rating;
   releaseInfo: ReleaseInfo;
   credits: Credits;
