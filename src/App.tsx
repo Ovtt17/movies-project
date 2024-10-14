@@ -1,11 +1,12 @@
 import './App.css'
+import Navigation from './components/Navigation'
 
 function App() {
 
   return (
-    <div className='text-amber-500'>
-      <p className='text-red-800'>hola</p>
-    </div>
+    <>
+      <Navigation />
+    </>
   )
 }
 
