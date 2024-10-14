@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const Navigation = () => {
+function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -27,9 +27,22 @@ const Navigation = () => {
             />
           </svg>
         </button>
+        {/* Botones visibles siempre */}
+        <ul className="hidden md:flex space-x-4">
+          <li className="text-white">
+            <a className="hover:text-gray-400" href="#">Home</a>
+          </li>
+          <li className="text-white">
+            <a className="hover:text-gray-400" href="#">Features</a>
+          </li>
+          <li className="text-white">
+            <a className="hover:text-gray-400" href="#">Pricing</a>
+          </li>
+        </ul>
       </div>
-      <div className={`md:flex ${isOpen ? 'block' : 'hidden'}`}>
-        <ul className="mt-4 md:mt-0 md:flex md:space-x-4">
+      {/* Menú desplegable en móviles */}
+      <div className={`md:hidden ${isOpen ? 'block' : 'hidden'}`}>
+        <ul className="mt-4 space-y-2">
           <li className="text-white">
             <a className="hover:text-gray-400" href="#">Home</a>
           </li>
