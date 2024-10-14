@@ -1,10 +1,5 @@
 import { useState, useEffect } from 'react';
-
-interface Movie {
-  id: number;
-  title: string;
-  year: number;
-}
+import { Movie } from '../types/movie';
 
 const useFavoriteMovies = () => {
   const [favoriteMovies, setFavoriteMovies] = useState<Movie[]>([]);
