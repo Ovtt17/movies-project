@@ -1,4 +1,5 @@
 export interface Movie {
+  id: number;
   comingSoon?: boolean;
   title: string;
   year: string;
