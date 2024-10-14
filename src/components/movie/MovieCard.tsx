@@ -42,21 +42,24 @@ const MovieCard: FC<MovieCardProps> = ({
       <section className='relative flex flex-row p-4'>
         <header>
           <h3 className='text-lg font-semibold'>{title}</h3>
-          <Rating
-            precision={0.5}
-            value={rating}
-            max={10}
-            readOnly
-            size='small'
-            sx={{
-              '& .MuiRating-iconFilled': {
-                color: '#ffeb3b',
-              },
-              '& .MuiRating-iconEmpty': {
-                color: '#ffffff',
-              },
-            }}
-          />
+          <div className='flex items-center'>
+            <Rating
+              precision={0.5}
+              value={rating}
+              max={10}
+              readOnly
+              size='small'
+              sx={{
+                '& .MuiRating-iconFilled': {
+                  color: '#ffeb3b',
+                },
+                '& .MuiRating-iconEmpty': {
+                  color: '#ffffff',
+                },
+              }}
+            />
+            <span className='ml-2 text-sm text-gray-100'>{rating}</span>
+          </div>
         </header>
         <div className='absolute right-5 cursor-pointer' onClick={() => onToggleFavorite(id)}>
           <FavoriteIcon
