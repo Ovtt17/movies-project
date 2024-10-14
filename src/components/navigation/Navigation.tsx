@@ -1,12 +1,15 @@
 import { useState } from 'react';
-
+import { Link } from 'react-router-dom';
+import LiveTvIcon from '@mui/icons-material/LiveTv';
 function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <nav className="bg-[#131925] p-4">
       <div className="flex items-center justify-between">
-        <a className="text-white text-xl font-bold" href="#">Movie App</a>
+        <Link to='/' className="pl-4 text-white text-xl font-bold">
+          <LiveTvIcon />
+        </Link>
         <button
           className="text-white md:hidden"
           onClick={() => setIsOpen(!isOpen)}
@@ -27,16 +30,13 @@ function Navigation() {
             />
           </svg>
         </button>
-        {/* Botones visibles siempre */}
+        {/* Botones visibles siempre en desktop */}
         <ul className="hidden md:flex space-x-4">
           <li className="text-white">
-            <a className="hover:text-gray-400" href="#">Home</a>
+            <Link to='/' className="hover:text-gray-400">Home</Link>
           </li>
           <li className="text-white">
-            <a className="hover:text-gray-400" href="#">Features</a>
-          </li>
-          <li className="text-white">
-            <a className="hover:text-gray-400" href="#">Pricing</a>
+            <Link to='/favorites' className="hover:text-gray-400">Favorites</Link>
           </li>
         </ul>
       </div>
@@ -44,13 +44,10 @@ function Navigation() {
       <div className={`md:hidden ${isOpen ? 'block' : 'hidden'}`}>
         <ul className="mt-4 space-y-2">
           <li className="text-white">
-            <a className="hover:text-gray-400" href="#">Home</a>
+            <Link to='/' className="hover:text-gray-400">Home</Link>
           </li>
           <li className="text-white">
-            <a className="hover:text-gray-400" href="#">Features</a>
-          </li>
-          <li className="text-white">
-            <a className="hover:text-gray-400" href="#">Pricing</a>
+            <Link to='/favorites' className="hover:text-gray-400">Favorites</Link>
           </li>
         </ul>
       </div>

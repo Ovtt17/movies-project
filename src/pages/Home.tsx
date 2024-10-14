@@ -1,6 +1,5 @@
 import ListMovie from '../components/movie/ListMovie';
 
-
 const Home = () => {
   return (
     <section>

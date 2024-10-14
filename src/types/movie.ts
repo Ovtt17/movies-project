@@ -2,7 +2,7 @@ export interface Movie {
   id: number;
   comingSoon?: boolean;
   title: string;
-  year: string;
+  year: number;
   rating: Rating;
   releaseInfo: ReleaseInfo;
   credits: Credits;
@@ -39,7 +39,7 @@ interface Metadata {
 }
 
 interface ImdbInfo {
-  rating: string;
+  rating: number;
   votes: string;
   id: string;
 }
