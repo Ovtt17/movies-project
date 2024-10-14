@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,16 +28,13 @@ function Navigation() {
             />
           </svg>
         </button>
-        {/* Botones visibles siempre */}
+        {/* Botones visibles siempre en desktop */}
         <ul className="hidden md:flex space-x-4">
           <li className="text-white">
-            <a className="hover:text-gray-400" href="#">Home</a>
+            <Link to='/' className="hover:text-gray-400">Home</Link>
           </li>
           <li className="text-white">
-            <a className="hover:text-gray-400" href="#">Features</a>
-          </li>
-          <li className="text-white">
-            <a className="hover:text-gray-400" href="#">Pricing</a>
+            <Link to='/favorites' className="hover:text-gray-400">Favorites</Link>
           </li>
         </ul>
       </div>
@@ -44,13 +42,10 @@ function Navigation() {
       <div className={`md:hidden ${isOpen ? 'block' : 'hidden'}`}>
         <ul className="mt-4 space-y-2">
           <li className="text-white">
-            <a className="hover:text-gray-400" href="#">Home</a>
+            <Link to='/' className="hover:text-gray-400">Home</Link>
           </li>
           <li className="text-white">
-            <a className="hover:text-gray-400" href="#">Features</a>
-          </li>
-          <li className="text-white">
-            <a className="hover:text-gray-400" href="#">Pricing</a>
+            <Link to='/favorites' className="hover:text-gray-400">Favorites</Link>
           </li>
         </ul>
       </div>
