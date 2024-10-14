@@ -16,7 +16,7 @@ const useFavoriteMovies = () => {
     }
   }, []);
 
-  return favoriteMovies;
+  return {favoriteMovies, setFavoriteMovies};
 };
 
 export default useFavoriteMovies;
