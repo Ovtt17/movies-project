@@ -39,7 +39,7 @@ interface Metadata {
 }
 
 interface ImdbInfo {
-  rating: string;
+  rating: number;
   votes: string;
   id: string;
 }
