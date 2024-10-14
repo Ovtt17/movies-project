@@ -8,10 +8,10 @@ interface ListMovieProps {
   movies: Movie[];
 }
 
-
 const ListMovie: FC<ListMovieProps> = ({ movies }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedMovie, setSelectedMovie] = useState<Movie | null>(null);
+  const [sortType, setSortType] = useState<'normal' | 'favorites'>('normal');
 
   const { favoriteMovies, setFavoriteMovies } = useFavoriteMovies();
 
@@ -46,7 +46,15 @@ const ListMovie: FC<ListMovieProps> = ({ movies }) => {
     return favoriteMovies.some((movie) => movie.id === id);
   };
 
-  const movieList = movies.map((movie) => (
+  const handleSortChange = (type: 'normal' | 'favorites') => {
+    setSortType(type);
+  };
+
+  const sortedMovies = sortType === 'favorites'
+    ? movies.filter(movie => isFavorite(movie.id))
+    : movies;
+
+  const movieList = sortedMovies.map((movie) => (
     <MovieCard
       key={movie.id}
       id={movie.id}
@@ -64,6 +72,18 @@ const ListMovie: FC<ListMovieProps> = ({ movies }) => {
   return (
     <div className='container mx-auto p-4'>
       <h2 className='text-2xl font-bold mb-4 text-center'>Lista de Películas</h2>
+      <div className='mb-4 text-center'>
+        <label htmlFor='sortType' className='mr-2'>Mostrar:</label>
+        <select
+          id='sortType'
+          value={sortType}
+          onChange={(e) => handleSortChange(e.target.value as 'normal' | 'favorites')}
+          className='p-2 border rounded'
+        >
+          <option value='normal'>Normal</option>
+          <option value='favorites'>Favoritos</option>
+        </select>
+      </div>
       <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4'>
         {movieList}
       </div>
