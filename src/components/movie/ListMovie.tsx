@@ -1,14 +1,11 @@
-import { FC, useState } from 'react';
+import { useState } from 'react';
 import MovieCard from './MovieCard';
 import { Movie } from '../../types/movie';
 import MovieModal from './MovieModal';
 import useFavoriteMovies from '../../hooks/useFavoriteMovies';
+import movies from '../../data/movies';
 
-interface ListMovieProps {
-  movies: Movie[];
-}
-
-const ListMovie: FC<ListMovieProps> = ({ movies }) => {
+const ListMovie = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedMovie, setSelectedMovie] = useState<Movie | null>(null);
   const [sortType, setSortType] = useState<'normal' | 'favorites'>('normal');
