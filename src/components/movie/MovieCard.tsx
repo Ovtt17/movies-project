@@ -10,6 +10,8 @@ interface MovieCardProps {
   released: string;
   poster: string;
   onViewMore: (id: number) => void;
+  onToggleFavorite: (id: number) => void;
+  isFavorite: (id: number) => boolean;
 }
 
 const MovieCard: FC<MovieCardProps> = ({
@@ -20,10 +22,12 @@ const MovieCard: FC<MovieCardProps> = ({
   released,
   poster,
   onViewMore,
+  onToggleFavorite,
+  isFavorite,
 }) => {
   return (
-    <article className='cursor-pointer bg-[#131925] rounded-lg shadow-md overflow-hidden transform transition-transform hover:scale-105 duration-200'>
-      <figure className='relative'>
+    <article className='bg-[#131925] rounded-lg shadow-md overflow-hidden transform transition-transform hover:scale-105 duration-200'>
+      <figure className='relative cursor-pointer'>
         <img
           src={poster}
           alt={title}
@@ -54,8 +58,12 @@ const MovieCard: FC<MovieCardProps> = ({
             }}
           />
         </header>
-        <div className='absolute right-5'>
-          <FavoriteIcon />
+        <div className='absolute right-5 cursor-pointer' onClick={() => onToggleFavorite(id)}>
+          <FavoriteIcon
+            sx={{
+              color: isFavorite(id) ? '#ff0004' : '#ffffff',
+            }}
+          />
         </div>
       </section>
       <footer className='p-4'>

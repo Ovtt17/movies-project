@@ -1,12 +1,20 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import movies from '../../data/movies';
 import MovieCard from './MovieCard';
 import { Movie } from '../../types/movie';
 import MovieModal from './MovieModal';
 
 const ListMovie = () => {
-  const [selectedMovie, setSelectedMovie] = useState<Movie | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedMovie, setSelectedMovie] = useState<Movie | null>(null);
+  const [favoriteMovies, setFavoriteMovies] = useState<Movie[]>([]);
+
+  useEffect(() => {
+    const storedFavorites = localStorage.getItem('favoriteMovies');
+    if (storedFavorites) {
+      setFavoriteMovies(JSON.parse(storedFavorites));
+    }
+  }, []);
 
   const handleViewMore = (id: number) => {
     const movie = movies.find((movie) => movie.id === id);
@@ -20,6 +28,25 @@ const ListMovie = () => {
     setSelectedMovie(null);
   };
 
+  const handleToggleFavorite = (id: number) => {
+    const movie = movies.find((movie) => movie.id === id);
+    if (!movie) return;
+    setFavoriteMovies((prevMovies) => {
+      const isFavorite = prevMovies.some((movie) => movie.id === id);
+      const updatedFavorites = isFavorite
+        ? prevMovies.filter((movie) => movie.id !== id)
+        : [...prevMovies, movie];
+
+      localStorage.setItem('favoriteMovies', JSON.stringify(updatedFavorites));
+
+      return updatedFavorites;
+    });
+  };
+
+  const isFavorite = (id: number) => {
+    return favoriteMovies.some((movie) => movie.id === id);
+  };
+
   const movieList = movies.map((movie) => (
     <MovieCard
       key={movie.id}
@@ -30,6 +57,8 @@ const ListMovie = () => {
       released={movie.releaseInfo.released}
       poster={movie.metadata.poster}
       onViewMore={handleViewMore}
+      onToggleFavorite={handleToggleFavorite}
+      isFavorite={isFavorite}
     />
   ));
 
