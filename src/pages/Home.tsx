@@ -1,10 +1,10 @@
 import ListMovie from '../components/movie/ListMovie';
-
+import movies from '../data/movies';
 
 const Home = () => {
   return (
     <section>
-      <ListMovie />
+      <ListMovie movies={movies} />
     </section>
   );
 }
