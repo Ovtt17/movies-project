@@ -1,8 +1,9 @@
 import { FC } from 'react';
-
+import {Rating} from '@mui/material'
 interface MovieCardProps {
   id: number;
   title: string;
+  rating: number;
   plot: string;
   released: string;
   poster: string;
@@ -12,6 +13,7 @@ interface MovieCardProps {
 const MovieCard: FC<MovieCardProps> = ({
   id,
   title,
+  rating,
   plot,
   released,
   poster,
@@ -33,6 +35,21 @@ const MovieCard: FC<MovieCardProps> = ({
       </div>
       <div className='p-4'>
         <h3 className='text-lg font-semibold'>{title}</h3>
+        <Rating
+          precision={0.5}
+          value={rating}
+          max={10}
+          readOnly
+          size='small'
+          sx={{
+            '& .MuiRating-iconFilled': {
+              color: '#ff6d75',
+            },
+            '& .MuiRating-iconEmpty': {
+              color: '#ffb3b3',
+            },
+          }}
+        />
         <p className='text-sm text-gray-100'>{released}</p>
         <p className='text-sm text-gray-200'>{plot}</p>
       </div>

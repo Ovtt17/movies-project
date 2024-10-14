@@ -25,6 +25,7 @@ const ListMovie = () => {
       key={movie.id}
       id={movie.id}
       title={movie.title}
+      rating={movie.imdb.rating}
       plot={movie.plot}
       released={movie.releaseInfo.released}
       poster={movie.metadata.poster}
