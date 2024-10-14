@@ -1,10 +1,11 @@
+import ListMovie from '../components/movie/ListMovie';
 
 
 const Home = () => {
   return (
-    <div>
-      Home
-    </div>
+    <section>
+      <ListMovie />
+    </section>
   );
 }
 
