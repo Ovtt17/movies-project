@@ -1,20 +1,15 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import movies from '../../data/movies';
 import MovieCard from './MovieCard';
 import { Movie } from '../../types/movie';
 import MovieModal from './MovieModal';
+import useFavoriteMovies from '../../hooks/useFavoriteMovies';
 
 const ListMovie = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedMovie, setSelectedMovie] = useState<Movie | null>(null);
-  const [favoriteMovies, setFavoriteMovies] = useState<Movie[]>([]);
 
-  useEffect(() => {
-    const storedFavorites = localStorage.getItem('favoriteMovies');
-    if (storedFavorites) {
-      setFavoriteMovies(JSON.parse(storedFavorites));
-    }
-  }, []);
+  const { favoriteMovies, setFavoriteMovies } = useFavoriteMovies();
 
   const handleViewMore = (id: number) => {
     const movie = movies.find((movie) => movie.id === id);
