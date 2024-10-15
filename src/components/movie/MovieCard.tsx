@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, useState } from 'react';
 import { Rating } from '@mui/material';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 
@@ -25,6 +25,13 @@ const MovieCard: FC<MovieCardProps> = ({
   onToggleFavorite,
   isFavorite,
 }) => {
+  const [zoom, setZoom] = useState(false);
+
+  const handleToggleFavorite = (id: number) => {
+    setZoom(true);
+    onToggleFavorite(id);
+    setTimeout(() => setZoom(false), 300)
+  };
   return (
     <article className='bg-[#131925] rounded-lg shadow-md overflow-hidden transform transition-transform hover:scale-105 duration-200'>
       <figure className='relative cursor-pointer'>
@@ -61,9 +68,11 @@ const MovieCard: FC<MovieCardProps> = ({
             <span className='ml-2 text-sm text-gray-100'>{rating}</span>
           </div>
         </header>
-        <div className='absolute right-5 cursor-pointer' onClick={() => onToggleFavorite(id)}>
+        <div className='absolute right-5 cursor-pointer' onClick={() => handleToggleFavorite(id)}>
           <FavoriteIcon
             sx={{
+              transition: 'transform 0.3s ease, color 0.3s ease',
+              transform: zoom ? 'scale(1.5)' : 'scale(1)',
               color: isFavorite(id) ? '#ff0004' : '#ffffff',
             }}
           />
